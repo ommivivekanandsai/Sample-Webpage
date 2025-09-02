@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek's Web-app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Spiderman.avif">
+    <style>
+        body {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #455471;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-xl shadow-lg p-8 max-w-lg w-full text-center">
+        <h1 class="text-2xl font-bold mb-4 text-green-800">Sample web-page</h1>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 max-w-lg w-full text-center">
+        <h1 class="text-3xl font-bold mb-4 text-Blue-800">Welcome to the Page !</h1>
+        <p class="text-gray-600 mb-6">
+            This is a simple interactive webpage. I'm feeling very glad to join in apex planet. There's a joy in making this internship on web-development.
+        </p>
+        <button id="messageButton" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+            Click Me
+        </button>
+    </div>
+    <div id="messageBox" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-xl shadow-2xl p-6 m-4 max-w-sm text-center">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Hello there!</h2>
+            <p class="text-gray-600 mb-6">
+                This is the basic simple webpage using HTML, styling using CSS and basic Javascript.
+            </p>
+            <button id="closeButton" class="bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-600 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const messageButton = document.getElementById('messageButton');
+            const messageBox = document.getElementById('messageBox');
+            const closeButton = document.getElementById('closeButton');
+
+            // Event listener for the main button
+            messageButton.addEventListener('click', () => {
+                // Show the message box by removing the 'hidden' class
+                messageBox.classList.remove('hidden');
+            });
+
+            // Event listener for the close button inside the message box
+            closeButton.addEventListener('click', () => {
+                // Hide the message box by adding the 'hidden' class
+                messageBox.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
